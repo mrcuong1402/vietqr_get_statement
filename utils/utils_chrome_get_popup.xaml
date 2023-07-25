@@ -1,0 +1,799 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Off_Popup_Chrome" this:Off_Popup_Chrome.in_browser_idx="1" this:Off_Popup_Chrome.in_timeout="00:00:30" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_browser_idx" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_textPopup" Type="OutArgument(x:String)" />
+    <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_timeout" Type="InArgument(x:TimeSpan)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>997,1774</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Off_Popup_Chrome_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="54">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="*** DESCRIPTION ***&#xA;Workflow xử lý popup trên chrome&#xA;&#xA;*** INPUTS ***&#xA;&#xA;&#xA;*** OUTPUTS ***&#xA;&#xA;&#xA;*** PROCEDURE ***&#xA;- Xác định có popup hay ko&#xA;- Nếu có, đọc text của popup và close popup&#xA;&#xA;*** META ***&#xA;Created on: &#xA;Author: thao.tran@sisuadigital.com&#xA;UiPath Version: &#xA;&#xA;" DisplayName="chrome_get_popup" sap:VirtualizedContainerService.HintSize="592,1709" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="bol_existPopup" />
+      <Variable x:TypeArguments="x:String" Default="&lt;ctrl role='dialog' /&gt;" Name="selector_popup" />
+      <Variable x:TypeArguments="x:Boolean" Name="boo_tryNext" />
+      <Variable x:TypeArguments="x:Int32" Name="idx" />
+      <Variable x:TypeArguments="x:String" Name="selector_browser" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,92" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Start get_popup.xaml -- browser_idx: &quot;+in_browser_idx.ToString]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="attach_chrome" sap:VirtualizedContainerService.HintSize="530,1169" sap2010:WorkflowViewState.IdRef="BrowserScope_1" Selector="[&quot;&lt;html app='chrome.exe' idx='&quot;+in_browser_idx.ToString+&quot;' /&gt;&quot;]">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="attach_chrome" sap:VirtualizedContainerService.HintSize="496,1020" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RestoreWindow Window="{x:Null}" DisplayName="Restore Window" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="RestoreWindow_1" />
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <Assign DisplayName="Assign_textPopup--init" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_textPopup]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:UiElementExists sap2010:Annotation.AnnotationText="-- timeout" DisplayName="exist_popup" Exists="[bol_existPopup]" sap:VirtualizedContainerService.HintSize="434,138" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13ce2730-d208-495a-90a2-429b622411c1" InformativeScreenshot="93a0b2f2b8842416a8b716ae1a36cdc5" Selector="[selector_popup]" TimeoutMS="[cint(in_timeout.TotalMilliseconds)]" WaitForReady="NONE" />
+              </ui:UiElementExists.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:UiElementExists>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;hasPopup: &quot;+bol_existPopup.ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <If Condition="[bol_existPopup = True]" DisplayName="if_popup_exist" sap:VirtualizedContainerService.HintSize="434,347" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="se_get_popup_text" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:UiElement" Name="popup" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[&quot;Getting text of popup...&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <Flowchart DisplayName="get_popup_text" sap:VirtualizedContainerService.HintSize="634,1053" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">200,0</av:Point>
+                        <av:Size x:Key="ShapeSize">60,75</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">230,74.66666666666667 230,125</av:PointCollection>
+                        <x:Double x:Key="Height">1015.5</x:Double>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Flowchart.StartNode>
+                      <x:Reference>__ReferenceID8</x:Reference>
+                    </Flowchart.StartNode>
+                    <FlowStep x:Name="__ReferenceID8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">130,125</av:Point>
+                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">230,177 230,227</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="find_element_popup" FoundElement="[popup]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+                        <ui:WaitUiElementAppear.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b8d39f1-3200-432b-8f1d-89d443efa52a" Selector="[selector_popup]" TimeoutMS="500">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:WaitUiElementAppear.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:WaitUiElementAppear>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">130,227</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">230,279 230,314</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch DisplayName="tc_get_attribute" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                            <TryCatch.Try>
+                              <Sequence DisplayName="se_get_attribute" sap:VirtualizedContainerService.HintSize="496,553.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;Try Catch cách Get attribute...&quot;]" />
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,32" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,462" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:ElementScope UiElement="{x:Null}" DisplayName="Element Scope popup" sap:VirtualizedContainerService.HintSize="434,437.3333333333333" sap2010:WorkflowViewState.IdRef="ElementScope_3">
+                                        <ui:ElementScope.Body>
+                                          <ActivityAction x:TypeArguments="x:Object">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                            </ActivityAction.Argument>
+                                            <ui:GetAttribute ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="-- idx = 1 thì lấy đc name trắng&#xA;-- idx = 2 lấy đc nội dung chính xác, vd &quot;Không có giao dịch thỏa mãn thông tin tìm kiếm&quot;&#xA;-- idx = 3 ko tồn tại&#xA;&gt;&gt; Vẫn lỗi trên robot live của MB, khi ko hiển thị màn hình" Attribute="name" DisplayName="Get Attribute name of popup" sap:VirtualizedContainerService.HintSize="334,301.3333333333333" sap2010:WorkflowViewState.IdRef="GetAttribute_4">
+                                              <ui:GetAttribute.Result>
+                                                <OutArgument x:TypeArguments="x:String">[out_textPopup]</OutArgument>
+                                              </ui:GetAttribute.Result>
+                                              <ui:GetAttribute.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e032a17e-22af-4777-9e56-34b429e1bf82" Selector="&lt;ctrl role='text' idx='2' /&gt;">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:GetAttribute.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:GetAttribute>
+                                          </ActivityAction>
+                                        </ui:ElementScope.Body>
+                                        <ui:ElementScope.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[popup]" Id="88e06b4a-cc17-40df-9ad2-f2f23eb34009">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:ElementScope.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:ElementScope>
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <ui:ElementScope UiElement="{x:Null}" DisplayName="element_scope_popup" sap:VirtualizedContainerService.HintSize="434,216" sap2010:WorkflowViewState.IdRef="ElementScope_4">
+                                  <ui:ElementScope.Body>
+                                    <ActivityAction x:TypeArguments="x:Object">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="element_scope_popup" sap:VirtualizedContainerService.HintSize="400,80" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Assign idx 1" sap:VirtualizedContainerService.HintSize="484,71.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int32">[idx]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <DoWhile DisplayName="do_while_get_attribute" sap:VirtualizedContainerService.HintSize="484,668.6666666666666" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[boo_tryNext]">
+                                          <Sequence DisplayName="do_while_get_attribute" sap:VirtualizedContainerService.HintSize="400,495.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="ui:GenericValue" Name="attribute_value" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:GetAttribute ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="-- idx = 1 thì lấy đc name trắng&#xA;-- idx = 2 lấy đc nội dung chính xác, vd &quot;Không có giao dịch thỏa mãn thông tin tìm kiếm&quot;&#xA;-- idx = 3 ko tồn tại&#xA;&gt;&gt; Vẫn lỗi trên robot live của MB, khi ko hiển thị màn hình, báo ko tìm đc selector" Attribute="name" DisplayName="get_attribute_name_of_popup" sap:VirtualizedContainerService.HintSize="338,301.3333333333333" sap2010:WorkflowViewState.IdRef="GetAttribute_5">
+                                              <ui:GetAttribute.Result>
+                                                <OutArgument x:TypeArguments="ui:GenericValue">[attribute_value]</OutArgument>
+                                              </ui:GetAttribute.Result>
+                                              <ui:GetAttribute.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1642891f-d6c4-4e4f-a589-242a0dcc41dc" Selector="[&quot;&lt;ctrl role='text' idx='&quot;+idx.tostring+&quot;' /&gt;&quot;]">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:GetAttribute.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:GetAttribute>
+                                            <If Condition="[attribute_value.tostring.trim &lt;&gt; &quot;&quot;]" DisplayName="if_attribute_not_empty" sap:VirtualizedContainerService.HintSize="338,32" sap2010:WorkflowViewState.IdRef="If_6">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If.Then>
+                                                <Sequence DisplayName="se_get_attribute" sap:VirtualizedContainerService.HintSize="400,304.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign out_textPopup" sap:VirtualizedContainerService.HintSize="338,71.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[out_textPopup]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[attribute_value.tostring.Trim]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign boo_tryNext" sap:VirtualizedContainerService.HintSize="338,71.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boo_tryNext]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence DisplayName="se_try_next_idx" sap:VirtualizedContainerService.HintSize="400,329.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign idx+1" sap:VirtualizedContainerService.HintSize="338,71.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Int32">[idx]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Int32">[idx+1]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:UiElementExists DisplayName="exist_next_idx" Exists="[boo_tryNext]" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                                                    <ui:UiElementExists.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="beee5430-a47a-45a6-bd24-bdc5dc4c4552" Selector="[&quot;&lt;ctrl role='text' idx='&quot;+idx.tostring+&quot;' /&gt;&quot;]" TimeoutMS="3000">
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:UiElementExists.Target>
+                                                  </ui:UiElementExists>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </DoWhile>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ElementScope.Body>
+                                  <ui:ElementScope.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[popup]" Id="6ff7684f-19b6-4aff-b20f-3e9a9accd376">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:ElementScope.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ElementScope>
+                              </Sequence>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500.6666666666667,173.33333333333334" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Warn" Message="[&quot;Try Catch cách Get attribute: &quot;+exception.Message+&quot; at &quot;+exception.Source]" />
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID3" Condition="[out_textPopup.ToString.Trim = &quot;&quot;]" DisplayName="text empty?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">195,314</av:Point>
+                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                  <av:PointCollection x:Key="TrueConnector">195,357.3333333333333 130,357.3333333333333 130,424</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">265,357.3333333333333 460,357.3333333333333 460,587</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">30,424</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">230,450 230,536.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch DisplayName="tc_get_full_text" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="se_get_full_text" sap:VirtualizedContainerService.HintSize="400,473.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_24" Message="[&quot;Try Catch cách Get Full Text...&quot;]" />
+                                        <ui:GetFullText IgnoreHidden="{x:Null}" sap2010:Annotation.AnnotationText="-- timeout 3s&#xA;-- Cách này fail với robot lock screen&#xA;-- Output ví dụ:&#xA;&quot;0%&#xA;Không có giao dịch thỏa mãn thông tin tìm kiếm&quot;" DisplayName="get_full_text_popup" sap:VirtualizedContainerService.HintSize="338,208" sap2010:WorkflowViewState.IdRef="GetFullText_3">
+                                          <ui:GetFullText.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[popup]" Id="ddcb76be-fdbb-4cdf-bffa-a5c568f59b3a" InformativeScreenshot="c65eb6307f178c824151c81202a994a3">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:GetFullText.Target>
+                                          <ui:GetFullText.Text>
+                                            <OutArgument x:TypeArguments="x:String">[out_textPopup]</OutArgument>
+                                          </ui:GetFullText.Text>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:GetFullText>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,173.33333333333334" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Warn" Message="[&quot;Try Catch cách Get Full Text: &quot;+exception.Message+&quot; at &quot;+exception.Source]" />
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID4" Condition="[out_textPopup.ToString.Trim = &quot;&quot;]" DisplayName="text empty?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">195,536.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">195,579.8333333333334 130,579.8333333333334 130,634</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">265,580 295,580 295,627.5 360,627.5</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID7">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">30,634</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">230,660 230,746.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <TryCatch DisplayName="tc_send_hotkey" sap:VirtualizedContainerService.HintSize="488,1216" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                                            <TryCatch.Try>
+                                              <Sequence DisplayName="Cách dùng hotkey" sap:VirtualizedContainerService.HintSize="450,733" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;Try Catch cách Send Hotkey&quot;]" />
+                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="-- Offet y to click in text" ClickType="CLICK_SINGLE" DisplayName="click_text_popup" sap:VirtualizedContainerService.HintSize="388,118" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                  <ui:Click.CursorPosition>
+                                                    <ui:CursorPosition OffsetY="-10" Position="Center">
+                                                      <ui:CursorPosition.OffsetX>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:CursorPosition.OffsetX>
+                                                    </ui:CursorPosition>
+                                                  </ui:Click.CursorPosition>
+                                                  <ui:Click.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[popup]" Id="3a455689-5fcc-42ae-926a-7fecbb94d132">
+                                                      <ui:Target.TimeoutMS>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:Target.TimeoutMS>
+                                                      <ui:Target.WaitForReady>
+                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                      </ui:Target.WaitForReady>
+                                                    </ui:Target>
+                                                  </ui:Click.Target>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:Click>
+                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="sh_ctrl_a" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="a" KeyModifiers="Ctrl" SpecialKey="False">
+                                                  <ui:SendHotkey.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[popup]" Id="7af5752b-d076-4d92-966b-0f21c008f750">
+                                                      <ui:Target.TimeoutMS>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:Target.TimeoutMS>
+                                                      <ui:Target.WaitForReady>
+                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                      </ui:Target.WaitForReady>
+                                                    </ui:Target>
+                                                  </ui:SendHotkey.Target>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:SendHotkey>
+                                                <TryCatch DisplayName="Try Catch TakeScreenshot " sap:VirtualizedContainerService.HintSize="524,775" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <TryCatch.Try>
+                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,303" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                                                      <ui:CommentOut.Body>
+                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflows\GBC\Common\TakeScreenshot.xaml">
+                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                              <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
+                                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
+                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </ui:InvokeWorkflowFile>
+                                                        </Sequence>
+                                                      </ui:CommentOut.Body>
+                                                    </ui:CommentOut>
+                                                  </TryCatch.Try>
+                                                  <TryCatch.Catches>
+                                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="490,161" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ActivityAction x:TypeArguments="s:Exception">
+                                                        <ActivityAction.Argument>
+                                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                        </ActivityAction.Argument>
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Warn" Message="[&quot;TakeScreenshot popup Chrome after Ctrl A: &quot;+exception.Message+&quot; at &quot;+exception.Source]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:LogMessage>
+                                                      </ActivityAction>
+                                                    </Catch>
+                                                  </TryCatch.Catches>
+                                                </TryCatch>
+                                                <ui:CopySelectedText SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="-- SendWindowMessages sẽ trả về text trắng" DisplayName="copy_selected_text" sap:VirtualizedContainerService.HintSize="388,67" sap2010:WorkflowViewState.IdRef="CopySelectedText_3" TimeoutMS="10000">
+                                                  <ui:CopySelectedText.Result>
+                                                    <OutArgument x:TypeArguments="x:String">[out_textPopup]</OutArgument>
+                                                  </ui:CopySelectedText.Result>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:CopySelectedText>
+                                              </Sequence>
+                                            </TryCatch.Try>
+                                            <TryCatch.Catches>
+                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,172" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ActivityAction x:TypeArguments="s:Exception">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                  </ActivityAction.Argument>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Warn" Message="[&quot;Try Catch cách send hotkey: &quot;+exception.Message+&quot; at &quot;+exception.Source]" />
+                                                </ActivityAction>
+                                              </Catch>
+                                            </TryCatch.Catches>
+                                          </TryCatch>
+                                          <FlowStep.Next>
+                                            <FlowDecision x:Name="__ReferenceID6" Condition="[out_textPopup.ToString.Trim = &quot;&quot;]" DisplayName="text empty?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">195,746.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                  <av:PointCollection x:Key="TrueConnector">195,789.8333333333334 170,789.8333333333334 170,863.5 230,863.5 230,893.5</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">265,790 295,790 295,627.5 360,627.5</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <FlowDecision.True>
+                                                <FlowStep x:Name="__ReferenceID0">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">130,893.5</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,122</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="-- To close popup&#xA;-- NO SIMULATE&#xA;-- Click before typing" ClickBeforeTyping="True" DisplayName="type_to_close_popup" sap:VirtualizedContainerService.HintSize="200,122" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="%[k(enter)]">
+                                                    <ui:TypeInto.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[popup]" Id="75747a17-cdcc-4677-9825-e144adc8ee0b" TimeoutMS="1000">
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:TypeInto.Target>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:TypeInto>
+                                                </FlowStep>
+                                              </FlowDecision.True>
+                                              <FlowDecision.False>
+                                                <FlowStep x:Name="__ReferenceID1">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">360,587</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">360,627.5 330,627.5 330,863.5 230,863.5 230,893.5</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Sequence DisplayName="se_get_text_successfully" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,103.33333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;out_textPopup = &quot;+out_textPopup]">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:LogMessage>
+                                                  </Sequence>
+                                                  <FlowStep.Next>
+                                                    <x:Reference>__ReferenceID0</x:Reference>
+                                                  </FlowStep.Next>
+                                                </FlowStep>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <x:Reference>__ReferenceID1</x:Reference>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <x:Reference>__ReferenceID1</x:Reference>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                    <x:Reference>__ReferenceID2</x:Reference>
+                    <x:Reference>__ReferenceID3</x:Reference>
+                    <x:Reference>__ReferenceID1</x:Reference>
+                    <x:Reference>__ReferenceID4</x:Reference>
+                    <x:Reference>__ReferenceID5</x:Reference>
+                    <x:Reference>__ReferenceID6</x:Reference>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                    <x:Reference>__ReferenceID7</x:Reference>
+                  </Flowchart>
+                  <If Condition="[out_textPopup.ToString.trim = &quot;&quot;]" DisplayName="if_cannot_get_popup_text" sap:VirtualizedContainerService.HintSize="634,32" sap2010:WorkflowViewState.IdRef="If_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Throw sap2010:Annotation.AnnotationText="Throw found popup but cannot read" DisplayName="throw_popup_found_cannot_read" Exception="[new SystemException(&quot;Found Napas popup but cannot read text inside&quot;)]" sap:VirtualizedContainerService.HintSize="334,128.66666666666666" sap2010:WorkflowViewState.IdRef="Throw_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Throw>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <ui:Comment sap:VirtualizedContainerService.HintSize="334,85.33333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Không có popup, giá trị out_popupText vẫn là trống" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:BrowserScope>
+  </Sequence>
+</Activity>

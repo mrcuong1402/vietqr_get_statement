@@ -1,0 +1,591 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="utils_msedge_save_as" this:utils_msedge_save_as._timeout="00:00:30" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="_strPathDownload" Type="InOutArgument(x:String)" />
+    <x:Property Name="_timeout" Type="InArgument(x:TimeSpan)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>932.666666666667,2888</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>utils_msedge_save_as_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="56">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.IO.Compression</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="utils_msedge_save_as" sap:VirtualizedContainerService.HintSize="942.666666666667,2823.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Delete ResourceFile="{x:Null}" sap2010:Annotation.AnnotationText="-- continue on error = true" ContinueOnError="True" DisplayName="delete_exising_file" sap:VirtualizedContainerService.HintSize="900.666666666667,111.333333333333" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[_strPathDownload]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:Delete>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="create_folder_to_save_file" sap:VirtualizedContainerService.HintSize="900.666666666667,80.6666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Directory.GetParent(_strPathDownload).ToString]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" CommunicationMethod="Native" DisplayName="open_download_page" sap:VirtualizedContainerService.HintSize="900.666666666667,2459.33333333333" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="edge://downloads/all">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <TryCatch DisplayName="attach_download_page" sap:VirtualizedContainerService.HintSize="866.666666666667,2356.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch.Try>
+              <Sequence DisplayName="attach_download_page" sap:VirtualizedContainerService.HintSize="828,2118.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="786,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                <ui:Comment sap:VirtualizedContainerService.HintSize="786,94" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Open link download page doesn't direct us there. We have to navigate in order to open internal page" />
+                <ui:NavigateTo Browser="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="navigate_to_download_page" sap:VirtualizedContainerService.HintSize="786,89.3333333333333" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="edge://downloads/all">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:NavigateTo>
+                <ui:ElementScope UiElement="{x:Null}" DisplayName="element_scope_all_files" sap:VirtualizedContainerService.HintSize="786,1639.33333333333" sap2010:WorkflowViewState.IdRef="ElementScope_2">
+                  <ui:ElementScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="element_scope_all_files" sap:VirtualizedContainerService.HintSize="752,1463.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="-- timeout 5s&#xA;-- We dont know if the newest file is the file we want. But to make sure that at least, there's some file downloaded today. " DisplayName="find_element_today" sap:VirtualizedContainerService.HintSize="710,184.666666666667" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+                          <ui:WaitUiElementAppear.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d05741ae-2d3d-48f0-b260-9965b72db0ea" InformativeScreenshot="f8d6c0d9a29170d93444c59f3a13734d" Selector="[&quot;&lt;ctrl name='&quot;+today.ToString(&quot;d MMMM yyyy&quot;)+&quot;' role='grouping' /&gt;&quot;]" TimeoutMS="5000">
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:WaitUiElementAppear.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:WaitUiElementAppear>
+                        <ui:ElementScope UiElement="{x:Null}" DisplayName="element_scope_newest_file" sap:VirtualizedContainerService.HintSize="710,1146.66666666667" sap2010:WorkflowViewState.IdRef="ElementScope_1">
+                          <ui:ElementScope.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="element_scope_newest_file" sap:VirtualizedContainerService.HintSize="676,970.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="strDefaultFileName" />
+                                  <Variable x:TypeArguments="x:String" Name="strOption" />
+                                  <Variable x:TypeArguments="ui:UiElement" Name="elementSaveAs" />
+                                  <Variable x:TypeArguments="ui:UiElement" Name="elementShowInFolder" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="get_text_name" sap:VirtualizedContainerService.HintSize="634,68" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a10e8d5-8aa1-453b-939d-f103efb81fc5" Selector="&lt;ctrl role='push button' idx='1' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[strDefaultFileName]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Latest file: &quot;+strDefaultFileName]" />
+                                <Flowchart sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">300,2.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">330,77.1666666666667 330,127.166666666667</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Flowchart.StartNode>
+                                    <x:Reference>__ReferenceID3</x:Reference>
+                                  </Flowchart.StartNode>
+                                  <FlowStep x:Name="__ReferenceID3">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">230,127.166666666667</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">330,179.833333333333 330,229.833333333333</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Pick DisplayName="pick_option" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="Pick_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <PickBranch DisplayName="PickBranch_save_as" sap:VirtualizedContainerService.HintSize="384.666666666667,332.666666666667" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                                        <PickBranch.Trigger>
+                                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="find_save_as" FoundElement="[elementSaveAs]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
+                                            <ui:WaitUiElementAppear.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76ab9e14-7f24-455f-bc76-a3bbdd025791" Selector="&lt;ctrl name='Save as' role='push button' /&gt;">
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:WaitUiElementAppear.Target>
+                                          </ui:WaitUiElementAppear>
+                                        </PickBranch.Trigger>
+                                        <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[strOption]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">save_as</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </PickBranch>
+                                      <PickBranch DisplayName="PickBranch_show_in_folder" sap:VirtualizedContainerService.HintSize="384.666666666667,332.666666666667" sap2010:WorkflowViewState.IdRef="PickBranch_5">
+                                        <PickBranch.Trigger>
+                                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="find_show_in_folder" FoundElement="[elementShowInFolder]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
+                                            <ui:WaitUiElementAppear.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76ab9e14-7f24-455f-bc76-a3bbdd025791" Selector="&lt;ctrl name='Show in folder' role='push button' /&gt;">
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:WaitUiElementAppear.Target>
+                                          </ui:WaitUiElementAppear>
+                                        </PickBranch.Trigger>
+                                        <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[strOption]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">show_in_folder</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </PickBranch>
+                                    </Pick>
+                                    <FlowStep.Next>
+                                      <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID0" DisplayName="option" Expression="[strOption.ToLower.Trim]" sap:VirtualizedContainerService.HintSize="70,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                                        <FlowSwitch.Default>
+                                          <FlowStep x:Name="__ReferenceID1">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">0,395.333333333333</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Sequence DisplayName="save_as" sap:VirtualizedContainerService.HintSize="390,530" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="-- timeout 5s&#xA;-- SIMULATE FAILED&#xA;-- SendWindowMessages: ok" ClickType="CLICK_SINGLE" DisplayName="click_save_as" sap:VirtualizedContainerService.HintSize="348,130" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+                                                <ui:Click.CursorPosition>
+                                                  <ui:CursorPosition Position="Center">
+                                                    <ui:CursorPosition.OffsetX>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:CursorPosition.OffsetX>
+                                                    <ui:CursorPosition.OffsetY>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:CursorPosition.OffsetY>
+                                                  </ui:CursorPosition>
+                                                </ui:Click.CursorPosition>
+                                                <ui:Click.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[elementSaveAs]" Id="453c4ab6-4759-4a23-b247-3a943edc5c77" TimeoutMS="5000">
+                                                    <ui:Target.WaitForReady>
+                                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                    </ui:Target.WaitForReady>
+                                                  </ui:Target>
+                                                </ui:Click.Target>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:Click>
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="inv_utils_window_save_as" sap:VirtualizedContainerService.HintSize="348,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Trace" LogEntry="WithArguments" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="wfs\_utils\utils_window_save_as.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="_timeout">[_timeout]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="_strPathDownload">[_strPathDownload]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="_strBrowser">msedge</InArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                              </ui:InvokeWorkflowFile>
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="inv_utils_wait_download_complete" sap:VirtualizedContainerService.HintSize="348,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Level="Trace" LogEntry="WithArguments" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="wfs\_utils\utils_wait_download_complete.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="_strPathDownload">[_strPathDownload]</InArgument>
+                                                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="_timeout">[_timeout]</InArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                              </ui:InvokeWorkflowFile>
+                                            </Sequence>
+                                          </FlowStep>
+                                        </FlowSwitch.Default>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">295,229.833333333333</av:Point>
+                                            <av:Size x:Key="ShapeSize">70,86.6666666666667</av:Size>
+                                            <av:PointCollection x:Key="Default">295,273.166666666667 100,273.166666666667 100,395.333333333333</av:PointCollection>
+                                            <av:PointCollection x:Key="show_in_folderConnector">365,273.166666666667 430,273.166666666667 430,395.333333333333</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <FlowStep x:Key="show_in_folder" x:Name="__ReferenceID2">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">330,395.333333333333</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="show_in_folder" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Name="strFileDownload_temp" />
+                                              <Variable x:TypeArguments="x:String" Name="strFolderDownload" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:KillProcess Process="{x:Null}" AppliesTo="OnlyCurrentUser" ContinueOnError="True" DisplayName="kill_explorer" sap:VirtualizedContainerService.HintSize="556.666666666667,135.333333333333" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="explorer" />
+                                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="-- timeout 5s&#xA;-- SIMULATE FAILED&#xA;-- SendWindowMessages: ok" ClickType="CLICK_SINGLE" DisplayName="click_show_in_folder" sap:VirtualizedContainerService.HintSize="556.666666666667,130" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
+                                              <ui:Click.CursorPosition>
+                                                <ui:CursorPosition Position="Center">
+                                                  <ui:CursorPosition.OffsetX>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:CursorPosition.OffsetX>
+                                                  <ui:CursorPosition.OffsetY>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:CursorPosition.OffsetY>
+                                                </ui:CursorPosition>
+                                              </ui:Click.CursorPosition>
+                                              <ui:Click.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[elementShowInFolder]" Id="453c4ab6-4759-4a23-b247-3a943edc5c77" TimeoutMS="5000">
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:Click.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:Click>
+                                            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="attach_window_download" sap:VirtualizedContainerService.HintSize="556.666666666667,548.666666666667" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="a27f12f8392dceab0027d7834bc68120" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' /&gt;">
+                                              <ui:WindowScope.Body>
+                                                <ActivityAction x:TypeArguments="x:Object">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="attach_window_download" sap:VirtualizedContainerService.HintSize="376,402.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="get_text_folder_path" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                                                      <ui:GetValue.Target>
+                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b61ab5b4-106a-4f7a-976a-b78509b63d32" Selector="&lt;wnd cls='ToolbarWindow32' title='Address:*' /&gt;">
+                                                          <ui:Target.TimeoutMS>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:Target.TimeoutMS>
+                                                          <ui:Target.WaitForReady>
+                                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                          </ui:Target.WaitForReady>
+                                                        </ui:Target>
+                                                      </ui:GetValue.Target>
+                                                      <ui:GetValue.Value>
+                                                        <OutArgument x:TypeArguments="x:String">[strFolderDownload]</OutArgument>
+                                                      </ui:GetValue.Value>
+                                                    </ui:GetValue>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Folder download: &quot;+strFolderDownload]" />
+                                                    <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="close_explorer" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="CloseWindow_1" WaitForReady="INTERACTIVE" />
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:WindowScope.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:WindowScope>
+                                            <Sequence DisplayName="copy_file" sap:VirtualizedContainerService.HintSize="556.666666666667,1207.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign_strFileDownload_temp" sap:VirtualizedContainerService.HintSize="514.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strFileDownload_temp]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[path.Combine(strFolderDownload, strDefaultFileName)]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;--&gt; Copy file&quot;+vbNewLine+&quot;From: &quot;+strFileDownload_temp+vbNewLine+&quot;To: &quot;+_strPathDownload]" />
+                                              <TryCatch DisplayName="tc_copy_file" sap:VirtualizedContainerService.HintSize="514.666666666667,646" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                                <TryCatch.Try>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="476,408" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[_strPathDownload]" DisplayName="copy_file" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[strFileDownload_temp]" />
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="inv_utils_wait_download_complete" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" Level="Trace" LogEntry="WithArguments" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="wfs\_utils\utils_wait_download_complete.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="_strPathDownload">[_strPathDownload]</InArgument>
+                                                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="_timeout">[_timeout]</InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                  </Sequence>
+                                                </TryCatch.Try>
+                                                <TryCatch.Catches>
+                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ActivityAction x:TypeArguments="s:Exception">
+                                                      <ActivityAction.Argument>
+                                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                      </ActivityAction.Argument>
+                                                      <Assign DisplayName="reAssign_strPath_Download" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[_strPathDownload]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[strFileDownload_temp]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                    </ActivityAction>
+                                                  </Catch>
+                                                </TryCatch.Catches>
+                                              </TryCatch>
+                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="514.666666666667,192.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                                                <ui:CommentOut.Body>
+                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <TryCatch DisplayName="tc_invoke_method_copy" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <TryCatch.Try>
+                                                        <InvokeMethod DisplayName="inv_method_copy_file" sap:VirtualizedContainerService.HintSize="237.333333333333,137.333333333333" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Copy" TargetType="si:File">
+                                                          <InArgument x:TypeArguments="x:String">[strFileDownload_temp]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String">[_strPathDownload]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                        </InvokeMethod>
+                                                      </TryCatch.Try>
+                                                      <TryCatch.Catches>
+                                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ActivityAction x:TypeArguments="s:Exception">
+                                                            <ActivityAction.Argument>
+                                                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                            </ActivityAction.Argument>
+                                                          </ActivityAction>
+                                                        </Catch>
+                                                      </TryCatch.Catches>
+                                                    </TryCatch>
+                                                  </Sequence>
+                                                </ui:CommentOut.Body>
+                                              </ui:CommentOut>
+                                            </Sequence>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowSwitch>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                  <x:Reference>__ReferenceID0</x:Reference>
+                                  <x:Reference>__ReferenceID1</x:Reference>
+                                  <x:Reference>__ReferenceID2</x:Reference>
+                                </Flowchart>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ElementScope.Body>
+                          <ui:ElementScope.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd050471-8bc0-45e8-a0ec-500d4a688d63" InformativeScreenshot="311900511073e7cf0611a4d4bd9c3aeb" Selector="&lt;ctrl role='list item' idx='1' /&gt;&lt;ctrl role='grouping' idx='1' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:ElementScope.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ElementScope>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ElementScope.Body>
+                  <ui:ElementScope.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f396dab1-f486-4216-884c-711f38d56ac4" InformativeScreenshot="0445e569439b2705b848eb10a8242c81" Selector="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl role='grouping' idx='1' /&gt;&lt;ctrl role='grouping' idx='1' /&gt;&lt;ctrl role='grouping' idx='2' /&gt;&lt;ctrl name='Downloads' role='grouping' /&gt;&lt;ctrl name='All files' role='list' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:ElementScope.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ElementScope>
+                <ui:CloseTab Browser="{x:Null}" DisplayName="close_download_tab" sap:VirtualizedContainerService.HintSize="786,22" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="832.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,310.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;msedge download: &quot;+exception.Message+&quot; -- source: &quot;+exception.Source]" />
+                    <ui:CloseTab Browser="{x:Null}" DisplayName="close_download_tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_3" />
+                    <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
