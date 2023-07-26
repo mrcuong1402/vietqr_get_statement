@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>566,831.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1462,947</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Chrome_SaveAs_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -36,6 +36,8 @@
       <x:String>System.Xml.Linq</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -73,29 +75,29 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Chrome_SaveAs" sap:VirtualizedContainerService.HintSize="390,766.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Chrome_SaveAs" sap:VirtualizedContainerService.HintSize="450,882" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Delete ResourceFile="{x:Null}" sap2010:Annotation.AnnotationText="-- continue on error = true" ContinueOnError="True" DisplayName="Delete file output" sap:VirtualizedContainerService.HintSize="348,111.333333333333" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[_strPathDownload]">
+    <ui:Delete ResourceFile="{x:Null}" sap2010:Annotation.AnnotationText="-- continue on error = true" ContinueOnError="True" DisplayName="Delete file output" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[_strPathDownload]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Delete>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder parent of file output" sap:VirtualizedContainerService.HintSize="348,80.6666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Directory.GetParent(_strPathDownload).ToString]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="348,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Waiting for file download to be completed&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="inv_utils_window_save_as" sap:VirtualizedContainerService.HintSize="348,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="wfs\_utils\utils_window_save_as.xaml">
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder parent of file output" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Directory.GetParent(_strPathDownload).ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Waiting for file download to be completed&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="utils_window_save_as.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="utils\utils_window_save_as.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:TimeSpan" x:Key="_timeout">[_timeout]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="_strPathDownload">[_strPathDownload]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="_strBrowser">chrome</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="inv_utils_wait_download_complete" sap:VirtualizedContainerService.HintSize="348,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="wfs\_utils\utils_wait_download_complete.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="utils_wait_download_complete.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="utils\utils_wait_download_complete.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="_strPathDownload">[_strPathDownload]</InArgument>
         <InArgument x:TypeArguments="x:TimeSpan" x:Key="_timeout">[_timeout]</InArgument>

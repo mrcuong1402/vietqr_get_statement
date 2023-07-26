@@ -3,12 +3,11 @@
     <x:Property Name="_strBankAccount" Type="InArgument(x:String)" />
     <x:Property Name="_dictTransactionProgress" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="_fileStatementPath" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1462,4347</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1462,4262</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VietinBank_Download_Bank_Statement_file_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,21 +102,22 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VietinBank_Download_Bank_Statement_file" sap:VirtualizedContainerService.HintSize="1324,4282" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VietinBank_Download_Bank_Statement_file" sap:VirtualizedContainerService.HintSize="1324,4197" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strYesterday" />
       <Variable x:TypeArguments="x:String" Name="strDate" />
       <Variable x:TypeArguments="x:String" Name="strDownloadFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="strDownloadFileName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[_config is Nothing]" DisplayName="if_test_wf_assign_args" sap:VirtualizedContainerService.HintSize="1262,475" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[_config is Nothing]" DisplayName="if_test_wf_assign_args" sap:VirtualizedContainerService.HintSize="1262,52" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -130,15 +130,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-                <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
-              </InArgument>
-              <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
-                <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;}" />
-              </InArgument>
-              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
-                <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="_config" />
-              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants"}]</InArgument>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[_config]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
@@ -183,15 +177,28 @@
         <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
       </If.Else>
     </If>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="attach_browser" sap:VirtualizedContainerService.HintSize="1262,3656" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e252b919578153ba84ed3884a2606fb6" Selector="&lt;html app='chrome.exe' /&gt;">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1262,101" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strDownloadFolderPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[_config("FOLDER_DOWNLOAD").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="attach_browser" sap:VirtualizedContainerService.HintSize="1262,3853" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e252b919578153ba84ed3884a2606fb6" Selector="&lt;html app='chrome.exe' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="download_scope" sap:VirtualizedContainerService.HintSize="1228,3509" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="download_scope" sap:VirtualizedContainerService.HintSize="1228,3706" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="strDownloadFileName" />
               <Variable x:TypeArguments="x:Boolean" Name="noDataStatus" />
               <Variable x:TypeArguments="x:Boolean" Name="hasDataStatus" />
             </Sequence.Variables>
@@ -488,7 +495,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Delay>
-            <Parallel DisplayName="parallel_download" sap:VirtualizedContainerService.HintSize="1166,690" sap2010:WorkflowViewState.IdRef="Parallel_1">
+            <Parallel DisplayName="parallel_download" sap:VirtualizedContainerService.HintSize="1166,887" sap2010:WorkflowViewState.IdRef="Parallel_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -496,7 +503,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Parallel.CompletionCondition>True</Parallel.CompletionCondition>
-              <Sequence DisplayName="se_no_data" sap:VirtualizedContainerService.HintSize="496,643" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="se_no_data" sap:VirtualizedContainerService.HintSize="496,840" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -526,6 +533,14 @@
                     <InArgument x:TypeArguments="x:Object">["0"]</InArgument>
                   </Assign.Value>
                 </Assign>
+                <Assign DisplayName="ass _dictTransactionProgress(&quot;errCode&quot;)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[_dictTransactionProgress("errCode")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["E53"]</InArgument>
+                  </Assign.Value>
+                </Assign>
                 <Assign DisplayName="assign" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[noDataStatus]</OutArgument>
@@ -534,9 +549,24 @@
                     <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:LogMessage DisplayName="log" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;download_status = 0, Không có dữ liệu giao dịch&quot;]" />
+                <ui:LogMessage DisplayName="log" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;download_status = 0, Không có dữ liệu giao dịch&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+                <Throw Exception="[New BusinessRuleException(&quot;Không có dữ liệu giao dịch&quot;)]" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Throw_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Throw>
               </Sequence>
-              <Sequence DisplayName="se_has_data" sap:VirtualizedContainerService.HintSize="496,643" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="se_has_data" sap:VirtualizedContainerService.HintSize="496,840" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -661,25 +691,24 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="utils_chrome_save_as.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1166,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="utils\utils_chrome_save_as.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="utils\utils_chrome_save_file_as.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1166,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="utils\utils_chrome_save_file_as.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config" />
-                <InArgument x:TypeArguments="x:String" x:Key="_strPathDownload" />
-                <InArgument x:TypeArguments="x:TimeSpan" x:Key="_timeout" />
+                <InArgument x:TypeArguments="x:String" x:Key="_strDownloadFolderPath">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDownloadFolderPath" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="_boolFileDownloaded" />
+                <InArgument x:TypeArguments="x:String" x:Key="_strSetNewFileName" />
+                <OutArgument x:TypeArguments="x:String" x:Key="_strDownloadFileName">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDownloadFileName" />
+                </OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
             <Assign DisplayName="ass _dictTransactionProgress(&quot;bank_statement_file_path&quot;)" sap:VirtualizedContainerService.HintSize="1166,82" sap2010:WorkflowViewState.IdRef="Assign_7">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Object">[_dictTransactionProgress("bank_statement_file_path")]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Object">[strDownloadFileName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[strDownloadFileName]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>

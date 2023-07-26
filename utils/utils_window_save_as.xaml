@@ -4,7 +4,7 @@
     <x:Property Name="_strPathDownload" Type="InArgument(x:String)" />
     <x:Property Name="_strBrowser" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>566,1546</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1462,1670</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -33,6 +33,8 @@
       <x:String>System.Net.Mail</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -72,19 +74,19 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="utils_window_save_as" sap:VirtualizedContainerService.HintSize="476,1481.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="utils_window_save_as" sap:VirtualizedContainerService.HintSize="546,1605" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="attach_window_save_as" sap:VirtualizedContainerService.HintSize="434,1389.33333333333" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="b2dccabe953b8002079409432645c269" Selector="[&quot;&lt;wnd app='&quot;+_strBrowser+&quot;.exe' title='Save As' /&gt;&quot;]" TimeoutMS="[cint(_timeout.TotalMilliseconds)]">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="attach_window_save_as" sap:VirtualizedContainerService.HintSize="484,1494" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="b2dccabe953b8002079409432645c269" Selector="[&quot;&lt;wnd app='&quot;+_strBrowser+&quot;.exe' title='Save As' /&gt;&quot;]" TimeoutMS="[cint(_timeout.TotalMilliseconds)]">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="attach_window_save_as" sap:VirtualizedContainerService.HintSize="376,1243.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="attach_window_save_as" sap:VirtualizedContainerService.HintSize="450,1347" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="element_fileName" />
             </Sequence.Variables>
@@ -93,7 +95,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element filename" FoundElement="[element_fileName]" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+            <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element filename" FoundElement="[element_fileName]" sap:VirtualizedContainerService.HintSize="388,87" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="42750580-68b6-4399-ba8d-6b366f702da2" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&#xA;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&#xA;&lt;wnd ctrlid='1001' /&gt;&#xA;">
                   <ui:Target.TimeoutMS>
@@ -105,7 +107,7 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="-- timeout 2s" ContinueOnError="True" DisplayName="sh_ctrl_A" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="A" KeyModifiers="Ctrl" SpecialKey="False">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="-- timeout 2s" ContinueOnError="True" DisplayName="sh_ctrl_A" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="a" KeyModifiers="Ctrl" SpecialKey="False">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[element_fileName]" Id="227be1c4-ed0b-4ba5-8b44-a41d6866abdf" InformativeScreenshot="d5f01ec695bc85c61272c005b18c1594" TimeoutMS="2000">
                   <ui:Target.WaitForReady>
@@ -119,7 +121,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SendHotkey>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="-- timeout 2s" ContinueOnError="True" DisplayName="sh_del" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="del" KeyModifiers="None" SpecialKey="True">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="-- timeout 2s" ContinueOnError="True" DisplayName="sh_del" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="del" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[element_fileName]" Id="1b5f2476-acd4-4df4-90e0-0d3bae2f257e" InformativeScreenshot="d5f01ec695bc85c61272c005b18c1594" TimeoutMS="2000">
                   <ui:Target.WaitForReady>
@@ -135,7 +137,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SendHotkey>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="type_path_download" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[_strPathDownload]">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="type_path_download" EmptyField="True" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[_strPathDownload]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[element_fileName]" Id="1f7a8a32-1276-4e0d-b59b-241561a7d8ef" InformativeScreenshot="b63489877f86579b6640465d1117767a">
                   <ui:Target.TimeoutMS>
@@ -153,7 +155,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="click_save" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="click_save" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -180,7 +182,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="-- continue on error = true" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="click_replace_old_file" sap:VirtualizedContainerService.HintSize="334,136.666666666667" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="-- continue on error = true" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="click_replace_old_file" sap:VirtualizedContainerService.HintSize="388,138" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -205,7 +207,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Download file successfully: &quot; +_strPathDownload]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Download file successfully: &quot; +_strPathDownload]" />
           </Sequence>
         </ActivityAction>
       </ui:WindowScope.Body>
