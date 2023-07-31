@@ -74,24 +74,10 @@
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "758c9769-4f18-41b7-8132-5e996607c2b6",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\ProcessTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
         "testCaseId": "59d45615-12ee-4f97-bf69-be0671e3e6f0",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "3c491b1e-d0d5-430a-a31c-305f6fd02c26",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCase_Process.xaml"
       },
       {
         "editingStatus": "InProgress",
@@ -106,6 +92,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Get_Statement\\VietinBank\\TestCase_vietinbank_consolidate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3c491b1e-d0d5-430a-a31c-305f6fd02c26",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Get_Statement\\TestCase_Process.xaml"
       }
     ],
     "modernBehavior": true

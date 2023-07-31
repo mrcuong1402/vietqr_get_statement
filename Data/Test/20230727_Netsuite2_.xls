@@ -1,0 +1,875 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>NetSuite Reports</Author>
+  <LastAuthor>NetSuite Reports</LastAuthor>
+  <Company>NetSuite</Company>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>10215</WindowHeight>
+  <WindowWidth>21570</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" ss:Size="12" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" ss:Size="14" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" ss:Size="7" ss:Bold="1"/>
+   <Interior ss:Color="#D0D0D0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s68">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial" ss:Size="7" ss:Bold="1"/>
+   <Interior ss:Color="#D0D0D0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s69">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s70">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s71">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000"/>
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s72">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000"/>
+   <NumberFormat ss:Format="&quot;đ&quot;#,##0.00"/>
+  </Style>
+  <Style ss:ID="s73">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="1"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s74">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="2"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s75">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="3"/>
+   <Borders/>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s76">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="2"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Dash" ss:Weight="1" ss:Color="#CCCCCC"/>
+   </Borders>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s77">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Dash" ss:Weight="1" ss:Color="#CCCCCC"/>
+   </Borders>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s78">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Dash" ss:Weight="1" ss:Color="#CCCCCC"/>
+   </Borders>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s79">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Dash" ss:Weight="1" ss:Color="#CCCCCC"/>
+   </Borders>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+   <NumberFormat ss:Format="&quot;đ&quot;#,##0.00"/>
+  </Style>
+  <Style ss:ID="s80">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="1"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Dash" ss:Weight="1" ss:Color="#CCCCCC"/>
+   </Borders>
+   <Font ss:FontName="Arial" ss:Size="8" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="3" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="42" ss:DefaultRowHeight="11.25">
+   <Column ss:Index="2" ss:Width="42.75"/>
+   <Column ss:Index="5" ss:Width="42.75" ss:Span="1"/>
+   <Column ss:Index="7" ss:Width="45.75"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Type</Data></Cell>
+    <Cell><Data ss:Type="String">Date</Data></Cell>
+    <Cell><Data ss:Type="String">Document Number</Data></Cell>
+    <Cell><Data ss:Type="String">Name</Data></Cell>
+    <Cell><Data ss:Type="String">Debit</Data></Cell>
+    <Cell><Data ss:Type="String">Credit</Data></Cell>
+    <Cell><Data ss:Type="String">Balance</Data></Cell>
+    <Cell><Data ss:Type="String">Memo</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="DateTime">2023-07-27T00:00:00.000</Data></Cell>
+    <Cell><Data ss:Type="String">DP00005449</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="Number">925000</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">219390892</Data></Cell>
+    <Cell><Data ss:Type="String">Hoàn ứng Tien ho tro chi phi MKT 500kCH T07.2023 cho cua hang</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="DateTime">2023-07-27T00:00:00.000</Data></Cell>
+    <Cell><Data ss:Type="String">JV00335296</Data></Cell>
+    <Cell ss:Index="6"><Data ss:Type="Number">783200</Data></Cell>
+    <Cell><Data ss:Type="Number">218607692</Data></Cell>
+    <Cell><Data ss:Type="String">1104_Vua Nệm hoàn tiền DH SOTNG02-KC 2464</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Selected/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="GeneralLedger">
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="67" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="42" ss:DefaultRowHeight="11.25">
+   <Column ss:Index="3" ss:Width="42.75"/>
+   <Column ss:Index="6" ss:Width="67.5" ss:Span="2"/>
+   <Row ss:AutoFitHeight="0" ss:Height="15.75">
+    <Cell ss:MergeAcross="7" ss:StyleID="s64"><Data ss:Type="String">Vua Nem Joint Stock Company</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="15.75">
+    <Cell ss:MergeAcross="7" ss:StyleID="s64"><Data ss:Type="String">HNI-Công ty Cổ phần Vua Nệm (Consolidated)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="18">
+    <Cell ss:MergeAcross="7" ss:StyleID="s66"><Data ss:Type="String">General Ledger</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="18">
+    <Cell ss:MergeAcross="7" ss:StyleID="s66"><Data ss:Type="String">Jul 2023</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="18">
+    <Cell ss:MergeAcross="7" ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="18">
+    <Cell ss:MergeAcross="7" ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Account</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Type</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Date</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Document Number</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Debit</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Credit</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Balance</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">111 - Tiền mặt</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s71"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s73"><Data ss:Type="String">1111 - Tiền VNĐ</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s71"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s74"><Data ss:Type="String">111111 - HNICTY/Tiền mặt VNĐ-Hà Nội-Công ty</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s71"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">214620512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332204</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">8500000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">223120512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332205</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">5500000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">228620512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332206</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">1600000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">230220512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332208</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">800000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">231020512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3046</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN1794 Trần Thị Thanh Tú</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">2900000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">228120512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332207</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">800000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">228920512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332209</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">1750000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">230670512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332210</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">1750000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">232420512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00332462</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">700000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">233120512</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005365</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">4325882</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">237446394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3047</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">ADV-VNHDBank Thẻ tín dụng HDBank</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">5000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">232446394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3050</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">ADV-VNHDBank Thẻ tín dụng HDBank</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">5000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">227446394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3048</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">ADV-VNHDBank Thẻ tín dụng HDBank</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">5000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">222446394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3049</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">ADV-VNHDBank Thẻ tín dụng HDBank</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">10000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">212446394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3051</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN3787 Lee Wade Snively Hinshaw</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">71100000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">141346394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3052</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">V-00000322 Công ty cổ phần Vua Nệm</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">30000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">111346394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005371</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">97000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">111443394</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005373</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">4038469</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">115481863</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005372</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">50000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">115531863</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005377</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">496210</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">116028073</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005379</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">2702284</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">118730357</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005378</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">7675944</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">126406301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00333207</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">1000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">125406301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005387</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">450000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">125856301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00333197</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">3000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">122856301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Customer Refund</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-12T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">27578</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">C-00677164 Chị Thoại</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">4360000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">118496301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005398</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">7500000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">125996301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005397</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">113579098</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">239575399</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3054</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN0449 Cún Thế Vinh</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">8280000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">231295399</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Bill Payment</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3053</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN2923 Trịnh Văn Kiên</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">1400000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">229895399</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005395</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">900000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">230795399</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Bill Payment</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VPHNI-LOC00012328</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN1167 Trần Ngọc Đoan Trinh</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">17785460</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">213009939</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005399</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">7320000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">220329939</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-14T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3055</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">V-00000322 Công ty cổ phần Vua Nệm</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">50000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">170329939</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-17T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00334178</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">400000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">170729939</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-18T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3056</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">ADV-VNHCNS Công ty-HCNS</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">100000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">170629939</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-18T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3057</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">V-00000322 Công ty cổ phần Vua Nệm</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">30000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">140629939</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-19T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005418</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">2166245</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">142796184</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005423</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">12555000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">155351184</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Bill Payment</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3058</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN1167 Trần Ngọc Đoan Trinh</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">4779091</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">150572093</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005424</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">21644000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">172216093</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005425</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">82147411</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">254363504</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005426</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">18999996</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">273363500</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00334549</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">227000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">273590500</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00334553</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">3796551</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">269793949</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Bill Payment</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VPHNI-LOC00012441</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN1167 Trần Ngọc Đoan Trinh</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">8800000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">260993949</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Bill Payment</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VPHNI-LOC00012440</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">VN1167 Trần Ngọc Đoan Trinh</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">5469750</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">255524199</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Customer Refund</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-21T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">27719</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">C-00674898 Anh Chị Oanh Choé</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">2474000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">253050199</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-21T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005429</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">1503600</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">254553799</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005433</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">6059993</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">260613792</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Check</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">3059</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">V-00000322 Công ty cổ phần Vua Nệm</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">50000000</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">210613792</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-26T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005446</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">7852100</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">218465892</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Deposit</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-27T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">DP00005449</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">925000</Data></Cell>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">219390892</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Journal</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="DateTime">2023-07-27T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">JV00335296</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s72"/>
+    <Cell ss:StyleID="s72"><Data ss:Type="Number">783200</Data></Cell>
+    <Cell ss:StyleID="s72" ss:Formula="=R[-1]C+RC[-2]-RC[-1]"><Data
+      ss:Type="Number">218607692</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s76"><Data ss:Type="String">Total - 111111 - HNICTY/Tiền mặt VNĐ-Hà Nội-Công ty</Data></Cell>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s78"/>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s79" ss:Formula="=SUM(R[-55]C:R[-1]C)"><Data ss:Type="Number">325015232</Data></Cell>
+    <Cell ss:StyleID="s79" ss:Formula="=SUM(R[-55]C:R[-1]C)"><Data ss:Type="Number">321028052</Data></Cell>
+    <Cell ss:StyleID="s79" ss:Formula="=R[-1]C"><Data ss:Type="Number">218607692</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s80"><Data ss:Type="String">Total - 1111 - Tiền VNĐ</Data></Cell>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s78"/>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s79" ss:Formula="=SUM(R[-57]C,R[-1]C)"><Data ss:Type="Number">325015232</Data></Cell>
+    <Cell ss:StyleID="s79" ss:Formula="=SUM(R[-57]C,R[-1]C)"><Data ss:Type="Number">321028052</Data></Cell>
+    <Cell ss:StyleID="s79" ss:Formula="=R[-57]C+R[-1]C"><Data ss:Type="Number">218607692</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s77"><Data ss:Type="String">Total - 111 - Tiền mặt</Data></Cell>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s78"/>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s77"/>
+    <Cell ss:StyleID="s79" ss:Formula="=SUM(R[-59]C,R[-1]C)"><Data ss:Type="Number">325015232</Data></Cell>
+    <Cell ss:StyleID="s79" ss:Formula="=SUM(R[-59]C,R[-1]C)"><Data ss:Type="Number">321028052</Data></Cell>
+    <Cell ss:StyleID="s79" ss:Formula="=R[-59]C+R[-1]C"><Data ss:Type="Number">218607692</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Unsynced/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R1C8</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

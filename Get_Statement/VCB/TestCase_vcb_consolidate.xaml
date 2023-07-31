@@ -115,7 +115,7 @@
                 <OutArgument x:TypeArguments="x:String">[fileStatementPath]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">D:\SISUA PROJECTS\data test\File sao kê ngân hàng\Vietcombank.xls</InArgument>
+                <InArgument x:TypeArguments="x:String">D:\projects\vietqr_get_statement\Data\Test\20230727_Vietcombank_0971000066668.xls</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>

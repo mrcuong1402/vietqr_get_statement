@@ -103,7 +103,7 @@
                 <OutArgument x:TypeArguments="x:Object">[transactionData("bank_code")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">["ICB"]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["VCB"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -111,7 +111,7 @@
                 <OutArgument x:TypeArguments="x:Object">[transactionData("username")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">[""]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["13146370G52"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -119,7 +119,7 @@
                 <OutArgument x:TypeArguments="x:Object">[transactionData("password")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">[""]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["Vuanem123@1"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -127,7 +127,7 @@
                 <OutArgument x:TypeArguments="x:Object">[transactionData("bank_account")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">["115000067275"]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["0971000066668"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -135,7 +135,7 @@
                 <OutArgument x:TypeArguments="x:Object">[transactionData("fromDate")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">["01-07-2024"]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["01-07-2023"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -143,7 +143,7 @@
                 <OutArgument x:TypeArguments="x:Object">[transactionData("toDate")]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Object">["24-07-2024"]</InArgument>
+                <InArgument x:TypeArguments="x:Object">["24-07-2023"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">

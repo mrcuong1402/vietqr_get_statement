@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1140,3186</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>787,3253</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System_Chrome_saveFileAs_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -99,15 +99,24 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" sap2010:Annotation.AnnotationText="***DESCRIPTION***&#xA;Workflow that download file from google chrome pop-up.&#xA;&#xA;***INPUTS***&#xA;_strDownloadFolderPath: path where file is to be downloaded.&#xA;_strSetNewFileName: file name dor download.&#xA;&#xA;***OUTPUTS***&#xA;&#xA;***PROCEDURE***&#xA;-get default name&#xA;-if no input name use default, else save as input name.&#xA;-check if path exist&#xA;&#xA;&#xA;***META***&#xA;Refactored on: 2020/01/27&#xA;Original Author: Thomas Murray&#xA;UiPath Version: 2019.10.3" DisplayName="chrome_save_as" sap:VirtualizedContainerService.HintSize="606,3121" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="ebd85a276fe52e9d50bfddf5caf15c4c" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
+  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" sap2010:Annotation.AnnotationText="***DESCRIPTION***&#xA;Workflow that download file from google chrome pop-up.&#xA;&#xA;***INPUTS***&#xA;_strDownloadFolderPath: path where file is to be downloaded.&#xA;_strSetNewFileName: file name dor download.&#xA;&#xA;***OUTPUTS***&#xA;&#xA;***PROCEDURE***&#xA;-get default name&#xA;-if no input name use default, else save as input name.&#xA;-check if path exist&#xA;&#xA;&#xA;***META***&#xA;Refactored on: 2020/01/27&#xA;Original Author: Thomas Murray&#xA;UiPath Version: 2019.10.3" DisplayName="chrome_save_as" sap:VirtualizedContainerService.HintSize="638,3188" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="ebd85a276fe52e9d50bfddf5caf15c4c" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
     <ui:WindowScope.Body>
       <ActivityAction x:TypeArguments="x:Object">
         <ActivityAction.Argument>
           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
         </ActivityAction.Argument>
-        <Sequence DisplayName="chrome_save_as" sap:VirtualizedContainerService.HintSize="572,2677" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="chrome_save_as" sap:VirtualizedContainerService.HintSize="604,2744" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strOriginalFileName" />
           </Sequence.Variables>
@@ -116,8 +125,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Delay DisplayName="wait_2_sec" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="510,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
-          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="get_edit_text" sap:VirtualizedContainerService.HintSize="510,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
+          <Delay DisplayName="wait_2_sec" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="542,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="get_edit_text" sap:VirtualizedContainerService.HintSize="542,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
             <ui:GetValue.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e243a1a-736d-4158-a576-d9c39f8dc779" InformativeScreenshot="5982e8166efb346d4043363ead2283d0" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd idx='1' /&gt;&lt;wnd idx='1' /&gt;" WaitForReady="INTERACTIVE">
                 <ui:Target.TimeoutMS>
@@ -135,42 +144,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetValue>
-          <If sap2010:Annotation.AnnotationText="if case techcombank" Condition="[strOriginalFileName.Contains(&quot;enquiry&quot;)]" DisplayName="If case techcombank" sap:VirtualizedContainerService.HintSize="510,383" sap2010:WorkflowViewState.IdRef="If_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[strOriginalFileName]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[strOriginalFileName.Replace(".csv","") + "_" + now.ToString("MM-dd-yy hh-mm-ss") + ".csv"]</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </Sequence>
-            </If.Then>
-            <If.Else>
-              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </If.Else>
-          </If>
-          <ui:LogMessage DisplayName="file_name" sap:VirtualizedContainerService.HintSize="510,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;original file name: &quot;+strOriginalFileName]">
+          <ui:LogMessage DisplayName="file_name" sap:VirtualizedContainerService.HintSize="542,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;original file name: &quot;+strOriginalFileName]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +152,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <If Condition="[_strSetNewFileName is nothing]" DisplayName="if_setName_nothing" sap:VirtualizedContainerService.HintSize="510,264" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[_strSetNewFileName is nothing]" DisplayName="if_setName_nothing" sap:VirtualizedContainerService.HintSize="542,344" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,10 +170,16 @@
               </Assign>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_9" />
+              <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
             </If.Else>
           </If>
-          <Assign DisplayName="download_file_name" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="download_file_name" sap:VirtualizedContainerService.HintSize="542,82" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[_strDownloadFileName]</OutArgument>
             </Assign.To>
@@ -207,10 +187,10 @@
               <InArgument x:TypeArguments="x:String">[_strSetNewFileName]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:Delete ResourceFile="{x:Null}" ContinueOnError="True" DisplayName="del_if_exist" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[_strDownloadFolderPath + _strSetNewFileName]" />
-          <Delay DisplayName="del_1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-          <ui:SetToClipboard DisplayName="path_copy" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[_strDownloadFolderPath + _strSetNewFileName]" />
-          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SpecialKey="{x:Null}" Activate="False" ClickBeforeTyping="False" DisplayName="sh_ctrl_v" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,152" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="V" KeyModifiers="Ctrl" SendWindowMessages="True">
+          <ui:Delete ResourceFile="{x:Null}" ContinueOnError="True" DisplayName="del_if_exist" sap:VirtualizedContainerService.HintSize="542,133" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path.Combine(_strDownloadFolderPath, _strSetNewFileName)]" />
+          <Delay DisplayName="del_1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="542,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+          <ui:SetToClipboard DisplayName="path_copy" sap:VirtualizedContainerService.HintSize="542,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Path.Combine(_strDownloadFolderPath, _strSetNewFileName)]" />
+          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SpecialKey="{x:Null}" Activate="False" ClickBeforeTyping="False" DisplayName="sh_ctrl_v" EmptyField="True" sap:VirtualizedContainerService.HintSize="542,153" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl" SendWindowMessages="True">
             <ui:SendHotkey.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="494ca2ad-ab9e-41c5-8367-7b942eb0ddc8" InformativeScreenshot="4f049f89184cb5ac70f1c6a875697cad" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="NONE">
                 <ui:Target.TimeoutMS>
@@ -225,7 +205,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:SendHotkey>
-          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="False" ClickBeforeTyping="False" DisplayName="sh_enter" EmptyField="False" sap:VirtualizedContainerService.HintSize="484,152" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="False" ClickBeforeTyping="False" DisplayName="sh_enter" EmptyField="False" sap:VirtualizedContainerService.HintSize="542,153" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
             <ui:SendHotkey.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79347db6-af95-4ed9-9556-f2a44deae037" InformativeScreenshot="4f049f89184cb5ac70f1c6a875697cad" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="NONE">
                 <ui:Target.TimeoutMS>
@@ -240,7 +220,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:SendHotkey>
-          <DoWhile DisplayName="check_path_exist" sap:VirtualizedContainerService.HintSize="484,535" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+          <DoWhile DisplayName="check_path_exist" sap:VirtualizedContainerService.HintSize="542,699" sap2010:WorkflowViewState.IdRef="DoWhile_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -248,19 +228,19 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <DoWhile.Condition>[_boolFileDownloaded = False]</DoWhile.Condition>
-            <Sequence DisplayName="check_path_exist" sap:VirtualizedContainerService.HintSize="376,374" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="check_path_exist" sap:VirtualizedContainerService.HintSize="496,537" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:PathExists Resource="{x:Null}" DisplayName="path_exist_verify" Exists="[_boolFileDownloaded]" sap:VirtualizedContainerService.HintSize="334,89" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[_strDownloadFolderPath + _strSetNewFileName]" PathType="File" />
-              <ui:LogMessage DisplayName="verify_exist" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[_strDownloadFolderPath + _strSetNewFileName +&quot;  - Path exist: &quot;+_boolFileDownloaded.ToString]" />
-              <Delay DisplayName="wait_2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+              <ui:PathExists Resource="{x:Null}" DisplayName="path_exist_verify" Exists="[_boolFileDownloaded]" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[Path.Combine(_strDownloadFolderPath, _strSetNewFileName)]" PathType="File" />
+              <ui:LogMessage DisplayName="verify_exist" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[Path.Combine(_strDownloadFolderPath, _strSetNewFileName) + &quot; - &quot; + _boolFileDownloaded.ToString]" />
+              <Delay DisplayName="wait_2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
             </Sequence>
           </DoWhile>
-          <ui:LogMessage DisplayName="dowload_success" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;file download successful&quot;]" />
+          <ui:LogMessage DisplayName="dowload_success" sap:VirtualizedContainerService.HintSize="542,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;file download successful&quot;]" />
         </Sequence>
       </ActivityAction>
     </ui:WindowScope.Body>

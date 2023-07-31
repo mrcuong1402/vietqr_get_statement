@@ -1,0 +1,9 @@
+﻿Truy van giao dich tai khoan/Transaction Enquiry
+So tai khoan/Account number,19036673007010,Loai tai khoan/Account type,Current Account
+Ten tai khoan/Account name,VND-TGTT-CTCP VUA NEM,So du hien tai/Available balance,463595
+Loai tien/Currency,VND,So du dau ngay/Opening balance,37463595
+Ngay giao dich/Transaction date,Ngay hieu luc/Value date,So but toan/Reference number,Tai khoan dich/Remitter's account number,Tên tài khoản đối ứng/Remitter's account name,Dien giai/Description,No/Debit,Co/Credit,Phi/Transaction fee,Thue/Transaction VAT,So du/Running balance
+27-07-2023,27-07-2023,FT23208010315723,VND1500200270001,,GD THE QUA POS SO THE 402156...7517 NGAY 27/07/2023 TAI Shopee - Vietnam 6562708100 VN APPCODE 90493 TID 99999999,-10000000,,,,463595
+27-07-2023,27-07-2023,FT23208907809208,VND1500200270001,,GD THE QUA POS SO THE 402156...7517 NGAY 27/07/2023 TAI Shopee - Vietnam 6562708100 VN APPCODE 88748 TID 99999999,-22000000,,,,10463595
+27-07-2023,27-07-2023,FT23208329898340,VND1500200270001,,GD THE QUA POS SO THE 402156...7517 NGAY 27/07/2023 TAI TIKI 842873058454 VN APPCODE 84611 TID 01039939,-5000000,,,,32463595
+,
